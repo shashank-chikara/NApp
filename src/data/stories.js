@@ -1,4 +1,6 @@
 // Comprehensive story data for Diorama
+import gazaImage from '../assets/gaza.jpg'
+
 export const stories = [
   {
     id: 1,
@@ -54,7 +56,7 @@ export const stories = [
     id: 2,
     title: "Gaza Ceasefire Proposal",
     summary: "New ceasefire proposal aims to end hostilities and establish lasting peace in the region.",
-    image: "/src/assets/gaza.jpg",
+    image: gazaImage,
     category: "Politics",
     tags: ["Middle East", "Peace", "Diplomacy", "International"],
     readTime: "7 min read",
