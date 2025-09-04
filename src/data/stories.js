@@ -130,7 +130,7 @@ export const stories = [
       },
       {
         date: "August 18, 2025",
-        title: "Hamas accepts the Egypt-Qatar mediated U.S.-backed ceasefire proposal",
+        title: "Hamas accepts the mediated ceasefire proposal",
         description: "Hamas accepts the Egypt-Qatar mediated U.S.-backed ceasefire proposal.",
         type: "breakthrough"
       },

@@ -262,31 +262,38 @@ const StoryPage = () => {
 
         {/* Timeline Section */}
         <motion.section
-          className="mb-16"
+          className="mb-24"
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h2 className="text-3xl font-bold mb-8 text-center">Story Timeline</h2>
+          <h2 className="text-3xl font-bold mb-16 text-center">Story Timeline</h2>
           
           <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-blue-500 to-purple-500" />
+            {/* Horizontal Timeline Line - Positioned to go through center of icons */}
+            <div className="absolute top-[204px] lg:top-[224px] left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-blue-500 to-purple-500" />
             
-            <div className="space-y-8">
+            {/* Horizontal Timeline Container */}
+            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between lg:space-x-4 space-y-8 lg:space-y-0">
               {story.timeline.map((event, index) => (
                 <motion.div
                   key={index}
-                  className="relative flex items-start"
-                  initial={{ x: -50, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
+                  className="relative flex flex-col items-center lg:flex-1"
+                  initial={{ y: 50, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true, margin: "-50px" }}
                 >
-                  {/* Timeline Dot */}
+                  {/* Title and Date - Above Timeline */}
+                  <div className="text-center mb-6 h-40 lg:h-44 flex flex-col justify-end">
+                    <h4 className="text-sm lg:text-base font-semibold leading-tight px-2 mb-4">{event.title}</h4>
+                    <span className="text-xs lg:text-sm font-medium text-primary">{event.date}</span>
+                  </div>
+                  
+                  {/* Timeline Dot - Perfectly centered on line */}
                   <motion.div
-                    className={`relative z-10 w-16 h-16 rounded-full flex items-center justify-center ${
+                    className={`relative z-20 w-10 h-10 lg:w-12 lg:h-12 rounded-full flex items-center justify-center mb-6 ${
                       event.type === 'breakthrough' ? 'bg-yellow-500' :
                       event.type === 'milestone' ? 'bg-blue-500' :
                       event.type === 'impact' ? 'bg-green-500' :
@@ -295,29 +302,13 @@ const StoryPage = () => {
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <Calendar className="w-6 h-6 text-white" />
+                    <Calendar className="w-4 h-4 lg:w-5 lg:h-5 text-white" />
                   </motion.div>
                   
-                  {/* Timeline Content */}
-                  <motion.div
-                    className="ml-8 bg-card rounded-2xl p-6 border border-border/50 flex-1"
-                    whileHover={{ y: -2, boxShadow: "0 10px 30px -12px rgba(0, 0, 0, 0.1)" }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-primary">{event.date}</span>
-                      <span className={`px-2 py-1 text-xs rounded-full ${
-                        event.type === 'breakthrough' ? 'bg-yellow-100 text-yellow-800' :
-                        event.type === 'milestone' ? 'bg-blue-100 text-blue-800' :
-                        event.type === 'impact' ? 'bg-green-100 text-green-800' :
-                        'bg-gray-100 text-gray-800'
-                      }`}>
-                        {event.type}
-                      </span>
-                    </div>
-                    <h4 className="text-lg font-semibold mb-2">{event.title}</h4>
-                    <p className="text-muted-foreground">{event.description}</p>
-                  </motion.div>
+                  {/* Description - Below Timeline */}
+                  <div className="w-full text-center h-40 lg:h-44 flex items-center justify-center">
+                    <p className="text-muted-foreground text-xs lg:text-sm leading-relaxed">{event.description}</p>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -326,7 +317,7 @@ const StoryPage = () => {
 
         {/* Article Content */}
         <motion.section
-          className="mb-16"
+          className="mb-20"
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -336,7 +327,7 @@ const StoryPage = () => {
             {story.content.split('\n\n').map((paragraph, index) => (
               <motion.p
                 key={index}
-                className="text-muted-foreground leading-relaxed mb-6"
+                className="text-muted-foreground leading-relaxed mb-8"
                 initial={{ y: 20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
