@@ -218,24 +218,14 @@ const StoryPage = () => {
           >
             <div className="space-y-8">
               <div>
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mr-4">
-                    <Eye className="w-6 h-6 text-blue-500" />
-                  </div>
-                  <h3 className="text-xl font-semibold">What Happened</h3>
-                </div>
+                <h3 className="text-xl font-semibold mb-4">What Happened</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   {story.overview.whatHappened}
                 </p>
               </div>
               
               <div>
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-green-500/10 rounded-full flex items-center justify-center mr-4">
-                    <TrendingUp className="w-6 h-6 text-green-500" />
-                  </div>
-                  <h3 className="text-xl font-semibold">Why It Matters</h3>
-                </div>
+                <h3 className="text-xl font-semibold mb-4">Why It Matters</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   {story.overview.whyItMatters}
                 </p>

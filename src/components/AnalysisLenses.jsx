@@ -446,7 +446,7 @@ const AnalysisLenses = ({ storyId }) => {
           <motion.button
             className={`
               mt-4 px-6 py-3 rounded-lg text-sm font-medium transition-all duration-200
-              ${colorClasses.bg} ${colorClasses.text} ${colorClasses.hover}
+              ${colorClasses.bg} ${colorClasses.text}
               flex items-center space-x-2
             `}
             onClick={(e) => {
@@ -515,7 +515,7 @@ const AnalysisLenses = ({ storyId }) => {
               <motion.div
                 className={`
                   border-2 rounded-xl transition-all duration-300 cursor-pointer
-                  ${colorClasses.border} ${colorClasses.hover}
+                  ${colorClasses.border}
                   ${isExpanded ? 'shadow-lg' : 'hover:shadow-md'}
                 `}
                 onClick={() => {
